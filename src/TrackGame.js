@@ -1,21 +1,31 @@
+import { Input } from "@nextui-org/input";
+import { Button, ButtonGroup } from "@nextui-org/react";
+import './TrackGame.css';
+import { useState } from "react";
 
-import { FormControl, InputLabel, Input } from '@mui/material';
 
 export default function TrackGame() {
-
+  const [loading, changeLoading] = useState(false);
   return (
     <div style={{ textAlign: 'center' }}>
-      <h1 style={{ fontFamily: "Courier New", color: "white" }}>Hmm.. No games yet. Add one to track!</h1>
-      <FormControl>
-        <InputLabel shrink>Name:</InputLabel>
-        <Input id="name" />
-      </FormControl>
+      <h2 style={{ fontFamily: "Courier New", color: "black" }}>Add a game to track!</h2>
+      <div className="w-full flex flex-row flex-wrap gap-4">
 
-      <FormControl style={{ marginLeft: 5 }}>
-        <InputLabel size="normal" focused>Age:</InputLabel>
-        <Input id="age" type='number' />
-      </FormControl>
-
-    </div>
+        <Input class='inputField' radius="lg" placeholder="Enter a game title" className="max-w-[220px]">
+        </Input>
+      </div>
+      <div class='button'>
+        <Button disableAnimation={true} isLoading={loading} onPress={() => changeLoading(true)}>
+          Find Game
+        </Button>
+      </div>
+    </div >
   );
+
+
+
+
 }
+
+
+

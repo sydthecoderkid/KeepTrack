@@ -1,0 +1,12 @@
+.button {
+
+  position: static;
+  align-items: center;
+  padding-top: 20px;
+
+}
+
+.inputField {
+  position: static;
+  align-items: center;
+}
